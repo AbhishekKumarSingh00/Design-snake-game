@@ -59,10 +59,12 @@ public class Main {
         SnakeGame(int width,int height,int[][] foods){
             this.width=width;
             this.height=height;
-            this.snake=new LinkedHashSet<>();
+            this.snake=new LinkedHashSet<>(); 
+            //stores unique, retains order(jis order mai insert kra hai usmai hi add hoga) 
+            //retains order bcz snake ko move karna easy hoga
             this.foods=new LinkedHashSet<>();
             for(int i=0;i<foods.length;i++){
-                this.foods.add(new Pair(foods[i][0],foods[i][1]));
+                this.foods.add(new Pair(foods[i][0],foods[i][1])); // insert food in food hashset
             }
             snake.add(new Pair(0,0));
             this.x=0;
@@ -92,11 +94,11 @@ public class Main {
                 System.out.println("Invalid input");
                 return -1;
             }
-            if(false){
-                for(Pair p:snake){
-                    System.out.println(p.x + "  " + p.y);
-                }
-            }
+            // if(false){
+            //     for(Pair p:snake){
+            //         System.out.println(p.x + "  " + p.y);
+            //     }
+            // }
             return snake.size()-1;
         }
 
